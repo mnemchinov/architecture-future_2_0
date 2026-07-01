@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="opencode" compressed="false">
+  <diagram id="c4-container" name="C4 Container Diagram">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ACTORS -->
+        <mxCell id="a-patients" value="Пациенты" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#08427A;fontColor=#FFFFFF;strokeColor=#08427A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a-doctors" value="Врачи&#xa;Медперсонал" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#08427A;fontColor=#FFFFFF;strokeColor=#08427A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="250" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a-analysts" value="Бизнес&#xa;аналитики" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#08427A;fontColor=#FFFFFF;strokeColor=#08427A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="430" width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a-partners" value="Партнёры&#xa;(фарма,&#xa;электроника)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#08427A;fontColor=#FFFFFF;strokeColor=#08427A;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="590" width="50" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- SYSTEM BOUNDARY -->
+        <mxCell id="boundary-system" value="Система «Будущее 2.0» (целевая архитектура)" style="rounded=1;dashed=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingTop=-6;" vertex="1" parent="1">
+          <mxGeometry x="200" y="40" width="1350" height="1000" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 1: PRESENTATION / PORTAL -->
+        <mxCell id="boundary-portal" value="Слой представления / Портал" style="rounded=1;dashed=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#2E7D32;fontSize=12;fontColor=#2E7D32;verticalAlign=top;align=left;spacingTop=-4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="60" width="1310" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c-portal" value="Data Self-Service Portal (React / Node.js)&#xa;Витрина данных — отчёты, ad-hoc аналитика" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="90" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c-clinic-ui" value="Clinic Dashboard (React)&#xa;Интерфейс клиник (замена PowerBuilder)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="580" y="90" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c-fintech-ui" value="Fintech Services Portal (React / Angular)&#xa;Финтех-операции, банковские сервисы" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="920" y="90" width="260" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 2: INTEGRATION -->
+        <mxCell id="boundary-integration" value="Интеграционный слой" style="rounded=1;dashed=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#E65100;fontSize=12;fontColor=#E65100;verticalAlign=top;align=left;spacingTop=-4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="200" width="1310" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="c-apigw" value="API Gateway (Kong / Yandex API GW)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="230" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c-kafka" value="Event Bus / Message Broker (Kafka)&#xa;Асинхронные события, streaming data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="580" y="230" width="260" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c-esb" value="Data Integration Bus (новая шина)&#xa;Замена Apache Camel ESB, CDC-коннекторы" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#E65100;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="920" y="230" width="260" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 3: DOMAINS -->
+        <mxCell id="boundary-domains" value="Бизнес-домены" style="rounded=1;dashed=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#1565C0;fontSize=12;fontColor=#1565C0;verticalAlign=top;align=left;spacingTop=-4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="330" width="1310" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="c-clinic-domain" value="Медицинский домен (Java / Python)&#xa;Электронные медкарты, расписания, персонал" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="360" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c-fintech-domain" value="Финтех-домен (Golang / Java)&#xa;Платежи, кредиты, банковские операции" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="580" y="360" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="c-ai-domain" value="ИИ-домен (Python)&#xa;ML-модели, анализ изображений, NLP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="920" y="360" width="260" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 4: DATA PLATFORM -->
+        <mxCell id="boundary-data" value="Платформа данных" style="rounded=1;dashed=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#7B1FA2;fontSize=12;fontColor=#7B1FA2;verticalAlign=top;align=left;spacingTop=-4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="480" width="1310" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="c-lakehouse" value="Data Lakehouse (Object Storage + Iceberg)&#xa;Единое хранилище: raw, processed, curated" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="510" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c-analytics" value="Analytics Engine (Yandex Data Proc / YT)&#xa;Spark, Hive, SQL-аналитика, пайплайны" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="580" y="510" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c-mesh" value="Data Mesh (доменные data products)&#xa;Data Catalog, Data Contracts, Self-serve" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="920" y="510" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="c-bi" value="BI Layer (Power BI / Apache Superset)&#xa;Дашборды, витрина данных, отчёты" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="600" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="c-ml-pipeline" value="ML Pipeline Platform (Kubeflow / Airflow)&#xa;Обучение и развёртывание моделей" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="920" y="600" width="260" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- LAYER 5: CLOUD INFRASTRUCTURE -->
+        <mxCell id="boundary-cloud" value="Облачная инфраструктура (Yandex Cloud)" style="shape=cloud;whiteSpace=wrap;html=1;fillColor=#E0F2F1;strokeColor=#00695C;fontSize=12;fontColor=#00695C;" vertex="1" parent="1">
+          <mxGeometry x="220" y="700" width="1310" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="c-k8s" value="Managed Kubernetes (YMK)&#xa;Оркестрация контейнеров" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2F1;strokeColor=#00695C;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="240" y="740" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c-db" value="Managed Databases&#xa;PostgreSQL, ClickHouse, Redis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2F1;strokeColor=#00695C;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="520" y="740" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c-storage" value="Object Storage (Yandex S3)&#xa;Хранение данных Lakehouse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2F1;strokeColor=#00695C;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="800" y="740" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c-iam" value="IAM / Security&#xa;Управление доступом, KMS, Audit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2F1;strokeColor=#00695C;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="740" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="c-network" value="Network (VPC, NAT, LB, VPN)&#xa;Сетевая инфраструктура" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2F1;strokeColor=#00695C;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="800" y="800" width="240" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- EDGES: ACTORS -> PORTAL LAYER -->
+        <mxCell id="e-patients-portal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#999999;" edge="1" parent="1" source="a-patients" target="c-portal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-doctors-clinic" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#999999;" edge="1" parent="1" source="a-doctors" target="c-clinic-ui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-analysts-portal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#999999;" edge="1" parent="1" source="a-analysts" target="c-portal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-partners-apigw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#999999;" edge="1" parent="1" source="a-partners" target="c-apigw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- EDGES: PORTAL -> INTEGRATION -->
+        <mxCell id="e-portal-apigw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;strokeColor=#999999;" edge="1" parent="1" source="c-portal" target="c-apigw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-clinic-apigw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;strokeColor=#999999;" edge="1" parent="1" source="c-clinic-ui" target="c-apigw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-fintech-apigw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;strokeColor=#999999;" edge="1" parent="1" source="c-fintech-ui" target="c-apigw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- EDGES: INTEGRATION -> DOMAINS -->
+        <mxCell id="e-apigw-clinic-d" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;strokeColor=#999999;" edge="1" parent="1" source="c-apigw" target="c-clinic-domain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-apigw-fintech-d" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;strokeColor=#999999;" edge="1" parent="1" source="c-apigw" target="c-fintech-domain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-apigw-ai-d" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;strokeColor=#999999;" edge="1" parent="1" source="c-apigw" target="c-ai-domain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-kafka-domains" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryX=0.3;entryY=0;strokeColor=#999999;" edge="1" parent="1" source="c-kafka" target="c-clinic-domain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-kafka-fintech" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryX=0.5;entryY=0;strokeColor=#999999;" edge="1" parent="1" source="c-kafka" target="c-fintech-domain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-kafka-ai" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryX=0.7;entryY=0;strokeColor=#999999;" edge="1" parent="1" source="c-kafka" target="c-ai-domain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- EDGES: DOMAINS -> DATA PLATFORM -->
+        <mxCell id="e-clinic-lakehouse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;strokeColor=#999999;" edge="1" parent="1" source="c-clinic-domain" target="c-lakehouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-fintech-lakehouse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;strokeColor=#999999;" edge="1" parent="1" source="c-fintech-domain" target="c-lakehouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ai-lakehouse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;strokeColor=#999999;" edge="1" parent="1" source="c-ai-domain" target="c-lakehouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-lakehouse-analytics" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#999999;" edge="1" parent="1" source="c-lakehouse" target="c-analytics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-lakehouse-mesh" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=0.5;exitX=1;entryX=0;entryY=0.5;strokeColor=#999999;" edge="1" parent="1" source="c-lakehouse" target="c-mesh">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-analytics-bi" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryX=0.5;entryY=0;strokeColor=#999999;" edge="1" parent="1" source="c-analytics" target="c-bi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-mesh-bi" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryX=0.5;entryY=0;strokeColor=#999999;" edge="1" parent="1" source="c-mesh" target="c-bi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ai-mlpipe" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryX=0.5;entryY=0;strokeColor=#999999;" edge="1" parent="1" source="c-ai-domain" target="c-ml-pipeline">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- EDGES: BI -> PORTAL (data back to portal) -->
+        <mxCell id="e-bi-portal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=0;exitX=0.5;entryY=0;entryX=0.65;strokeColor=#999999;dashed=1;" edge="1" parent="1" source="c-bi" target="c-portal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- LEGEND -->
+        <!-- BUSINESS SCENARIO ANNOTATIONS -->
+        <mxCell id="scenario-reporting" value="Сценарий: быстрая подготовка отчётности" style="text;html=1;fillColor=none;fontSize=12;fontStyle=1;fontColor=#2E7D32;" vertex="1" parent="1">
+          <mxGeometry x="240" y="670" width="460" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="scenario-scaling" value="Сценарий: масштабирование для новых бизнесов" style="text;html=1;fillColor=none;fontSize=12;fontStyle=1;fontColor=#00695C;" vertex="1" parent="1">
+          <mxGeometry x="800" y="670" width="460" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="scenario-domains" value="Сценарий: независимое развитие финтех и ИИ" style="text;html=1;fillColor=none;fontSize=12;fontStyle=1;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="580" y="460" width="300" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- LEGEND -->
+        <mxCell id="legend" value="Условные обозначения C4:" style="text;html=1;fillColor=none;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="750" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-person" value="[Actor] Актор (внешняя роль)" style="text;html=1;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="770" width="160" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-container" value="[Container] Приложение / сервис" style="text;html=1;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="785" width="160" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-db" value="[DB] База данных / Хранилище" style="text;html=1;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="800" width="160" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-cloud" value="[Cloud] Облачная инфраструктура" style="text;html=1;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="815" width="160" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-boundary" value="[Boundary] Граница (логическая группа)" style="text;html=1;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="830" width="180" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-note" value="[Note] Витрина не включает медкарты и истории болезней" style="text;html=1;fillColor=none;fontSize=10;fontStyle=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="860" width="210" height="15" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

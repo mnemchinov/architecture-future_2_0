@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="opencode" compressed="false">
+  <diagram id="tech-radar" name="Технологический радар">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" pageScale="1" pageWidth="1100" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="Технологический радар — компания «Будущее 2.0»" style="text;html=1;fillColor=none;fontSize=16;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="600" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Concentric rings (center at 500, 460) -->
+        <!-- Outer ring (Hold) - radius 290 -->
+        <mxCell id="ring-hold" value="" style="ellipse;html=1;fillColor=none;strokeColor=#333333;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="170" width="580" height="580" as="geometry" />
+        </mxCell>
+        <!-- Ring 2 (Assess) - radius 220 -->
+        <mxCell id="ring-assess" value="" style="ellipse;html=1;fillColor=none;strokeColor=#666666;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="240" width="440" height="440" as="geometry" />
+        </mxCell>
+        <!-- Ring 1 (Trial) - radius 140 -->
+        <mxCell id="ring-trial" value="" style="ellipse;html=1;fillColor=none;strokeColor=#999999;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="320" width="280" height="280" as="geometry" />
+        </mxCell>
+        <!-- Center ring (Adopt) - radius 50 -->
+        <mxCell id="ring-adopt" value="" style="ellipse;html=1;fillColor=none;strokeColor=#999999;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="410" width="100" height="100" as="geometry" />
+        </mxCell>
+        <!-- Center dot -->
+        <mxCell id="center-dot" value="" style="ellipse;html=1;fillColor=#333333;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="495" y="455" width="10" height="10" as="geometry" />
+        </mxCell>
+
+        <!-- Quadrant dividers (horizontal and vertical lines through center) -->
+        <mxCell id="divider-h" value="" style="line;html=1;fillColor=none;strokeColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="458" width="580" height="4" as="geometry" />
+        </mxCell>
+        <mxCell id="divider-v" value="" style="line;html=1;fillColor=none;strokeColor=#333333;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="498" y="170" width="4" height="580" as="geometry" />
+        </mxCell>
+
+        <!-- Ring labels (right side) -->
+        <mxCell id="l-adopt" value="Adopt" style="text;html=1;fillColor=#E8F5E9;fontSize=11;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="800" y="430" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l-trial" value="Trial" style="text;html=1;fillColor=#FFF3E0;fontSize=11;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="800" y="360" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l-assess" value="Assess" style="text;html=1;fillColor=#FFF8E1;fontSize=11;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="800" y="290" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="l-hold" value="Hold" style="text;html=1;fillColor=#FFEBEE;fontSize=11;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="800" y="220" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Legend: ring colors -->
+        <mxCell id="legend-adopt" value="" style="rect;html=1;fillColor=#E8F5E9;strokeColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="800" y="450" width="16" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-trial" value="" style="rect;html=1;fillColor=#FFF3E0;strokeColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="800" y="380" width="16" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-assess" value="" style="rect;html=1;fillColor=#FFF8E1;strokeColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="800" y="310" width="16" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-hold" value="" style="rect;html=1;fillColor=#FFEBEE;strokeColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="800" y="240" width="16" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- Quadrant labels -->
+        <mxCell id="q1-label" value="Языки и Фреймворки" style="text;html=1;fillColor=none;fontSize=13;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="540" y="190" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="q2-label" value="Платформы и Инфраструктура" style="text;html=1;fillColor=none;fontSize=13;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="240" y="190" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="q3-label" value="Данные и Аналитика" style="text;html=1;fillColor=none;fontSize=13;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="240" y="710" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="q4-label" value="Интеграция и Инструменты" style="text;html=1;fillColor=none;fontSize=13;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="540" y="710" width="200" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Technology items - Adopt ring (center) -->
+        <mxCell id="t-python" value="Python" style="text;html=1;fillColor=#E8F5E9;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="472" width="50" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-golang" value="Golang" style="text;html=1;fillColor=#E8F5E9;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="448" width="50" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-docker" value="Docker" style="text;html=1;fillColor=#E8F5E9;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="424" width="50" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-restgrpc" value="REST / gRPC" style="text;html=1;fillColor=#E8F5E9;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="476" y="492" width="58" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Trial ring items -->
+        <mxCell id="t-java" value="Java" style="text;html=1;fillColor=#E8F5E9;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="400" width="50" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-typescript" value="TypeScript" style="text;html=1;fillColor=#FFF3E0;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="350" width="70" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-nodejs" value="Node.js" style="text;html=1;fillColor=#FFF3E0;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="378" width="60" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-postgresql" value="PostgreSQL" style="text;html=1;fillColor=#FFF3E0;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="348" y="350" width="70" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-yandexk8s" value="Yandex Managed K8s" style="text;html=1;fillColor=#FFF3E0;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="348" y="378" width="106" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-objstor" value="Yandex Object Storage" style="text;html=1;fillColor=#FFF3E0;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="348" y="406" width="106" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-kong" value="Kong API Gateway" style="text;html=1;fillColor=#FFF3E0;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="348" y="434" width="90" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-iceberg" value="Apache Iceberg" style="text;html=1;fillColor=#FFF3E0;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="348" y="500" width="90" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-clickhouse" value="ClickHouse" style="text;html=1;fillColor=#FFF3E0;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="348" y="528" width="70" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-ydb" value="YDB" style="text;html=1;fillColor=#FFF3E0;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="348" y="556" width="50" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-kafka" value="Apache Kafka" style="text;html=1;fillColor=#FFF3E0;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="500" width="80" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-openapi" value="OpenAPI" style="text;html=1;fillColor=#FFF3E0;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="528" width="60" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Assess ring items -->
+        <mxCell id="t-airflow" value="Yandex Managed Airflow" style="text;html=1;fillColor=#FFF8E1;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="299" y="300" width="110" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-datamesh" value="Data Mesh (подход)" style="text;html=1;fillColor=#FFF8E1;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="299" y="580" width="100" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-superset" value="Apache Superset" style="text;html=1;fillColor=#FFF8E1;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="299" y="608" width="90" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-contracts" value="Data Contracts" style="text;html=1;fillColor=#FFF8E1;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="580" width="80" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-portal" value="Self-Service Portal" style="text;html=1;fillColor=#FFF8E1;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="608" width="100" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Hold ring items -->
+        <mxCell id="t-pb" value="PowerBuilder" style="text;html=1;fillColor=#FFEBEE;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="240" width="70" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-sqlsrv" value="SQL Server 2008" style="text;html=1;fillColor=#FFEBEE;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="240" width="80" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-camel" value="Apache Camel (ESB)" style="text;html=1;fillColor=#FFEBEE;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="650" width="100" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="t-pbi" value="Power BI (кастомизации)" style="text;html=1;fillColor=#FFEBEE;fontSize=9;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="650" width="110" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Disclaimers -->
+        <mxCell id="note" value="Кольца: Adopt (активно используем) → Trial (пробуем) → Assess (изучаем) → Hold (не развиваем)" style="text;html=1;fillColor=none;fontSize=10;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="200" y="780" width="600" height="20" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

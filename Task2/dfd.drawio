@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="opencode" compressed="false">
+  <diagram id="dfd-level1" name="DFD — Level 1">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- EXTERNAL ENTITIES -->
+        <mxCell id="e-patient" value="Пациент" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#333333;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="40" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-doctor" value="Врач / Медперсонал" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#333333;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="140" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-partner-pharma" value="Партнёр (фармацевтика)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#333333;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="260" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-partner-elec" value="Партнёр (электроника)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#333333;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="360" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-analyst" value="Бизнес-аналитик" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#333333;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="490" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="e-regulator" value="Регулятор (ЦБ)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#333333;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="590" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- SYSTEM BOUNDARY -->
+        <mxCell id="boundary-domains" value="Граница системы — бизнес-домены" style="rounded=1;dashed=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;fontSize=14;fontStyle=1;verticalAlign=top;align=left;spacingTop=-6;" vertex="1" parent="1">
+          <mxGeometry x="230" y="20" width="610" height="680" as="geometry" />
+        </mxCell>
+
+        <!-- DOMAIN PROCESSES -->
+        <mxCell id="p-medical" value="1. Медицинский домен&#xa;Приём, медкарты, расписание, диагностика" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="290" y="40" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p-fintech" value="2. Финтех-домен&#xa;Платежи, кредиты, транзакции, счета" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="290" y="150" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p-ai" value="3. ИИ-домен&#xa;ML-модели, анализ изображений, NLP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="290" y="260" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p-partner" value="4. Партнёрский домен&#xa;Интеграция фармацевтики и электроники" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="290" y="370" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="p-governance" value="5. Управленческий домен&#xa;BI, отчётность, KPI, управление" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="290" y="570" width="220" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- DATA STORES -->
+        <mxCell id="ds-lakehouse" value="Data Lakehouse&#xa;(Object Storage + Iceberg)" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="610" y="40" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ds-opdb" value="Domain Operational DBs&#xa;(PostgreSQL / YDB per domain)" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="610" y="150" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ds-legacy" value="Legacy DWH&#xa;(SQL Server 2008)&#xa;выгрузка в Lakehouse" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#FBE9E7;strokeColor=#D84315;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="610" y="260" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ds-vitrina" value="Витрина данных / Data Mart&#xa;(ClickHouse / Power BI)" style="shape=cylinder;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="610" y="370" width="210" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== EDGES ==================== -->
+
+        <!-- E1: Patient -> Medical Domain -->
+        <mxCell id="f-patient-medical" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e-patient" target="p-medical">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-patient-medical" value="Запись, данные пациента" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-patient-medical">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- E2: Doctor <-> Medical Domain -->
+        <mxCell id="f-doctor-medical" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e-doctor" target="p-medical">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-doctor-medical" value="Ведение карт, назначения" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-doctor-medical">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Medical -> AI (anonymized data) -->
+        <mxCell id="f-medical-ai" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;" edge="1" parent="1" source="p-medical" target="p-ai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-medical-ai" value="Аноним. данные исследований" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-medical-ai">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- AI -> Medical (results) -->
+        <mxCell id="f-ai-medical" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=0;exitX=0.5;entryY=1;entryX=0.5;" edge="1" parent="1" source="p-ai" target="p-medical">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-ai-medical" value="Результаты ИИ-анализа" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-ai-medical">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Medical -> Data Lakehouse -->
+        <mxCell id="f-medical-lakehouse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-medical" target="ds-lakehouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-medical-lakehouse" value="Операционные данные клиники" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-medical-lakehouse">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Fintech -> Data Lakehouse -->
+        <mxCell id="f-fintech-lakehouse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-fintech" target="ds-lakehouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-fintech-lakehouse" value="Финансовые транзакции" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-fintech-lakehouse">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Fintech -> Regulator -->
+        <mxCell id="f-fintech-regulator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;" edge="1" parent="1" source="p-fintech" target="e-regulator">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-fintech-regulator" value="Отчётность (ЦБ, 152-ФЗ)" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-fintech-regulator">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- AI -> Data Lakehouse -->
+        <mxCell id="f-ai-lakehouse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-ai" target="ds-lakehouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-ai-lakehouse" value="Результаты ML-моделей" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-ai-lakehouse">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Pharma -> Partner Domain -->
+        <mxCell id="f-pharma-partner" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e-partner-pharma" target="p-partner">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-pharma-partner" value="Данные о лекарствах, заказы" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-pharma-partner">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Electronics -> Partner Domain -->
+        <mxCell id="f-elec-partner" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="e-partner-elec" target="p-partner">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-elec-partner" value="Данные оборудования" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-elec-partner">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Partner -> Data Lakehouse -->
+        <mxCell id="f-partner-lakehouse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-partner" target="ds-lakehouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-partner-lakehouse" value="Партнёрские данные" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-partner-lakehouse">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Data Lakehouse -> Governance -->
+        <mxCell id="f-lakehouse-gov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;" edge="1" parent="1" source="ds-lakehouse" target="p-governance">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-lakehouse-gov" value="Аналитические данные" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-lakehouse-gov">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Data Lakehouse -> Витрина -->
+        <mxCell id="f-lakehouse-vitrina" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="ds-lakehouse" target="ds-vitrina">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-lakehouse-vitrina" value="Агрегированные данные" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-lakehouse-vitrina">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Витрина -> Analyst -->
+        <mxCell id="f-vitrina-analyst" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryY=0;entryX=0.5;" edge="1" parent="1" source="ds-vitrina" target="e-analyst">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-vitrina-analyst" value="Отчёты, дашборды" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-vitrina-analyst">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Витрина -> Governance: dashboard data -->
+        <mxCell id="f-vitrina-gov" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;" edge="1" parent="1" source="ds-vitrina" target="p-governance">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-vitrina-gov" value="Данные для дашбордов" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-vitrina-gov">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Legacy DWH -> Data Lakehouse -->
+        <mxCell id="f-legacy-lakehouse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="ds-legacy" target="ds-lakehouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-legacy-lakehouse" value="Выгрузка исторических данных" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-legacy-lakehouse">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Medical <-> OPDB -->
+        <mxCell id="f-medical-opdb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-medical" target="ds-opdb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-medical-opdb" value="Сохранение / чтение" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-medical-opdb">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Fintech <-> OPDB -->
+        <mxCell id="f-fintech-opdb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p-fintech" target="ds-opdb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-fintech-opdb" value="Сохранение / чтение" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-fintech-opdb">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Medical -> Fintech: billing -->
+        <mxCell id="f-medical-fintech" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=1;exitX=0.5;entryY=0;entryX=0.5;" edge="1" parent="1" source="p-medical" target="p-fintech">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-medical-fintech" value="Данные об оплате услуг" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-medical-fintech">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Fintech -> Medical: payment confirmation -->
+        <mxCell id="f-fintech-medical" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitY=0;exitX=0.5;entryY=1;entryX=0.5;" edge="1" parent="1" source="p-fintech" target="p-medical">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l-fintech-medical" value="Статус платежа / подтверждение" style="edgeLabel;html=1;fontSize=9;" vertex="1" connectable="0" parent="f-fintech-medical">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <mxPoint y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- LEGEND -->
+        <mxCell id="legend" value="Условные обозначения DFD:" style="text;html=1;fillColor=none;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="700" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-entity" value="[Entity] Внешняя сущность" style="text;html=1;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="30" y="720" width="160" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-process" value="[Process] Бизнес-домен / процесс" style="text;html=1;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="30" y="735" width="180" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-store" value="[Store] Хранилище данных" style="text;html=1;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="30" y="750" width="160" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-flow" value="[Flow] Поток данных (с меткой)" style="text;html=1;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="30" y="765" width="180" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-dash" value="[Migrate] Историческая миграция" style="text;html=1;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="30" y="780" width="180" height="15" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
