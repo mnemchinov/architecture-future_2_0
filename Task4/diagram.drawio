@@ -1,0 +1,136 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="page1">
+    <mxGraphModel dx="1420" dy="820" grid="1" gridSize="10" guides="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Cloud boundary -->
+        <mxCell id="cloud" value="Yandex Cloud" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F8FF;fontSize=14;fontStyle=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="900" height="560" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend-tf" value="Terraform" style="text;html=1;fillColor=#E8F5E9;fontSize=10;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-manual" value="Вручную" style="text;html=1;fillColor=#E3F2FD;fontSize=10;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="100" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- NETWORK section -->
+        <mxCell id="net-box" value="Сеть и безопасность" style="swimlane;whiteSpace=wrap;html=1;startSize=20;fillColor=#E8F5E9;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="200" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="vpc" value="VPC Network\narch-network" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="net-box">
+          <mxGeometry x="10" y="30" width="180" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="subnet-a" value="Subnet A (10.0.1.0/24)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="net-box">
+          <mxGeometry x="10" y="60" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="subnet-b" value="Subnet B (10.0.2.0/24)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="net-box">
+          <mxGeometry x="10" y="85" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="nat" value="NAT Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="net-box">
+          <mxGeometry x="10" y="110" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rt" value="Route Table (0.0.0.0/0 → NAT)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="net-box">
+          <mxGeometry x="10" y="135" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sg-k8s" value="Security Group (K8s)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="net-box">
+          <mxGeometry x="10" y="160" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sg-db" value="Security Group (DB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="net-box">
+          <mxGeometry x="10" y="185" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sg-bastion" value="Security Group (Bastion)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="net-box">
+          <mxGeometry x="10" y="210" width="180" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- COMPUTE section -->
+        <mxCell id="comp-box" value="Вычисления" style="swimlane;whiteSpace=wrap;html=1;startSize=20;fillColor=#E8F5E9;" vertex="1" parent="1">
+          <mxGeometry x="290" y="130" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s" value="Managed Kubernetes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="comp-box">
+          <mxGeometry x="10" y="30" width="180" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-master" value="Master (zonal)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6A7;fontSize=8;" vertex="1" parent="comp-box">
+          <mxGeometry x="10" y="60" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="k8s-ng" value="Node Group (3 ноды, 4vCPU, 16GB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6A7;fontSize=8;" vertex="1" parent="comp-box">
+          <mxGeometry x="10" y="83" width="180" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="bastion" value="Bastion VM (2vCPU, 4GB)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="comp-box">
+          <mxGeometry x="10" y="110" width="180" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- DATA section -->
+        <mxCell id="data-box" value="Данные" style="swimlane;whiteSpace=wrap;html=1;startSize=20;fillColor=#E8F5E9;" vertex="1" parent="1">
+          <mxGeometry x="520" y="130" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="pg" value="Managed PostgreSQL (HA, 2 хоста)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="data-box">
+          <mxGeometry x="10" y="30" width="180" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="ch" value="Managed ClickHouse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="data-box">
+          <mxGeometry x="10" y="60" width="180" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kafka" value="Managed Kafka (2 брокера)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="data-box">
+          <mxGeometry x="10" y="87" width="180" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="oss" value="Object Storage (Lakehouse)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="data-box">
+          <mxGeometry x="10" y="114" width="180" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- IAM section -->
+        <mxCell id="iam-box" value="IAM и доступы" style="swimlane;whiteSpace=wrap;html=1;startSize=20;fillColor=#E8F5E9;" vertex="1" parent="1">
+          <mxGeometry x="750" y="130" width="170" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="sa-k8s" value="SA k8s (role: editor)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="iam-box">
+          <mxGeometry x="10" y="30" width="150" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="sa-storage" value="SA storage (role: storage.editor)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;fontSize=9;" vertex="1" parent="iam-box">
+          <mxGeometry x="10" y="57" width="150" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="iam-policy-k8s" value="Folder IAM: k8s-editor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6A7;fontSize=8;" vertex="1" parent="iam-box">
+          <mxGeometry x="10" y="84" width="150" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="iam-policy-st" value="Folder IAM: storage-editor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5D6A7;fontSize=8;" vertex="1" parent="iam-box">
+          <mxGeometry x="10" y="107" width="150" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- MANUAL section (below cloud) -->
+        <mxCell id="manual-box" value="Ручное развёртывание (CI/CD + Helm / kubectl)" style="swimlane;whiteSpace=wrap;html=1;startSize=20;fillColor=#E3F2FD;" vertex="1" parent="1">
+          <mxGeometry x="60" y="690" width="860" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="cicd" value="GitLab CI / ArgoCD" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;fontSize=9;" vertex="1" parent="manual-box">
+          <mxGeometry x="10" y="30" width="150" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="kong" value="Kong API Gateway (Helm)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;fontSize=9;" vertex="1" parent="manual-box">
+          <mxGeometry x="180" y="30" width="150" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="airflow" value="Airflow (Helm)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;fontSize=9;" vertex="1" parent="manual-box">
+          <mxGeometry x="350" y="30" width="150" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="monitoring" value="Prometheus + Grafana" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;fontSize=9;" vertex="1" parent="manual-box">
+          <mxGeometry x="520" y="30" width="150" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="microservices" value="Микросервисы доменов" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;fontSize=9;" vertex="1" parent="manual-box">
+          <mxGeometry x="690" y="30" width="150" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows: Terraform resources to manual -->
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#666;dashed=1;" edge="1" source="k8s" target="kong" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#666;dashed=1;" edge="1" source="k8s" target="airflow" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Title -->
+        <mxCell id="title" value="Диаграмма автоматизации развёртывания" style="text;html=1;fontSize=16;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="300" y="10" width="400" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
